@@ -6,8 +6,6 @@ Bot w Pythonie, który obserwuje [info-kierowca.pl](https://info-kierowca.pl) w 
 
 To darmowy odpowiednik zlap-termin. Wystarczy Python i jedna komenda.
 
-Spokojnie chodzi tygodniami na Raspberry Pi, domowym serwerze albo dowolnym komputerze, który zostawiasz włączony.
-
 ## Komenda
 
 ```bash
@@ -58,9 +56,12 @@ python infocar_bot.py --list-words                      # lista ośrodków WORD 
 python infocar_bot.py --check-once                      # jedno sprawdzenie i wyjście
 python infocar_bot.py --org-id 43 --days 14             # monitorowanie, tylko powiadomienia
 python infocar_bot.py --org-id 43 --days 14 --auto-book # monitorowanie z rezerwacją
+python infocar_bot.py --all-words --days 14             # monitorowanie wszystkich znanych ośrodków WORD
 ```
 
 `--list-words` czyta plik `word_centers.json`. Jeśli tego pliku nie ma, lista będzie pusta, ale dowolne całkowite ID organizacji i tak zadziała. 43 to PORD Gdańsk.
+
+`--all-words` (`-a`) sprawdza wszystkie ośrodki z `word_centers.json` (na dziś 91) zamiast `--org-id`. Wymaga obecności `word_centers.json` i nadpisuje `--org-id` oraz `organization_id(s)` z `config.json`, gdy jest ustawiona. Każdy cykl sprawdzania będzie wtedy znacznie wolniejszy, bo przechodzi przez wszystkie te ośrodki zamiast jednego.
 
 ## Konfiguracja
 
@@ -77,7 +78,5 @@ Skopiuj `config.example.json` do `config.json` i uzupełnij:
 | `min_interval` / `max_interval` | Zakres przerwy między sprawdzeniami, w sekundach. Domyślnie 240 i 360, a wszystko powyżej 600 zostaje przycięte, żeby chronić token JWT. |
 | `telegram_bot_token` | Od @BotFather. |
 | `telegram_chat_id` | Twoje ID czatu. |
-
-Cztery wartości można też podać przez zmienne środowiskowe: `INFOCAR_TOKEN`, `INFOCAR_PKK`, `TELEGRAM_BOT_TOKEN` i `TELEGRAM_CHAT_ID`. Uwaga: nic nie wczytuje pliku `.env` automatycznie, więc `.env.example` to lista nazw do wyeksportowania samodzielnie, a nie plik do skopiowania. Flagi z linii poleceń mają pierwszeństwo przed zmiennymi środowiskowymi, a te przed `config.json`.
 
 Telegram jest opcjonalny. Bez tokenu i ID czatu bot zapisuje w logu to, co by wysłał, i pracuje dalej.

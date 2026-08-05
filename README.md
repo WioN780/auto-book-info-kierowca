@@ -58,9 +58,12 @@ python infocar_bot.py --list-words                      # list WORD centers and 
 python infocar_bot.py --check-once                      # one check, then exit
 python infocar_bot.py --org-id 43 --days 14             # monitor, notify only
 python infocar_bot.py --org-id 43 --days 14 --auto-book # monitor and book
+python infocar_bot.py --all-words --days 14             # monitor every known WORD center
 ```
 
 `--list-words` reads `word_centers.json`. If that file is missing the list comes up empty, but any integer organization ID still works. 43 is PORD Gdańsk.
+
+`--all-words` (`-a`) checks every center in `word_centers.json` (91 as of writing) instead of `--org-id`. It requires `word_centers.json` to be present and overrides `--org-id` and `organization_id(s)` in `config.json` when set. Expect a much slower loop, since every cycle now pages through all of those centers instead of one.
 
 ## Configuration
 
@@ -77,7 +80,5 @@ Copy `config.example.json` to `config.json` and fill it in:
 | `min_interval` / `max_interval` | Sleep range between checks, in seconds. Defaults are 240 and 360, and anything above 600 is clamped down to protect the JWT. |
 | `telegram_bot_token` | From @BotFather. |
 | `telegram_chat_id` | Your chat ID. |
-
-Four values can also come from the environment: `INFOCAR_TOKEN`, `INFOCAR_PKK`, `TELEGRAM_BOT_TOKEN`, and `TELEGRAM_CHAT_ID`. Note that nothing loads a `.env` file for you, so `.env.example` is a list of names to export yourself, not a file to copy. Command line flags win over environment variables, which win over `config.json`.
 
 Telegram is optional. Without a token and chat ID the bot logs what it would have sent and carries on.

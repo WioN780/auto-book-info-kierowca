@@ -413,6 +413,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--token", "-t", help="InfoCar Authorization Token or Cookie string")
     parser.add_argument("--pkk", "-p", help="PKK Profile Number")
     parser.add_argument("--org-id", "-o", help="WORD Organization ID(s), comma-separated (e.g. 43,42,73)")
+    parser.add_argument("--all-words", "-a", action="store_true", help="Check every known WORD center instead of --org-id")
     parser.add_argument("--days", "-d", type=int, help="Maximum number of days ahead to look for exams (e.g. 7)")
     parser.add_argument("--auto-book", "-b", action="store_true", help="Enable auto-booking if a slot is found")
     parser.add_argument("--min-interval", type=int, help="Minimum fetch sleep interval in seconds (default: 240)")
@@ -451,15 +452,21 @@ def main():
 
     cfg = load_config(args.config)
 
-    auth_token = args.token or os.environ.get("INFOCAR_TOKEN") or cfg.get("auth_token") or cfg.get("token")
-    pkk = args.pkk or os.environ.get("INFOCAR_PKK") or cfg.get("pkk")
-    org_ids = parse_org_ids(args.org_id, cfg)
+    auth_token = args.token or cfg.get("auth_token") or cfg.get("token")
+    pkk = args.pkk or cfg.get("pkk")
+    if args.all_words:
+        if not WORD_CENTERS:
+            logger.critical("No word_centers.json found; cannot use --all-words.")
+            sys.exit(1)
+        org_ids = sorted(int(k) for k in WORD_CENTERS.keys())
+    else:
+        org_ids = parse_org_ids(args.org_id, cfg)
     max_days = args.days if args.days is not None else cfg.get("max_days", 7)
     auto_book = args.auto_book or cfg.get("auto_book", False)
     min_interval = args.min_interval or cfg.get("min_interval", 240)
     max_interval = args.max_interval or cfg.get("max_interval", 360)
-    tg_token = args.telegram_token or os.environ.get("TELEGRAM_BOT_TOKEN") or cfg.get("telegram_bot_token") or cfg.get("telegram_token")
-    tg_chat_id = args.telegram_chat_id or os.environ.get("TELEGRAM_CHAT_ID") or cfg.get("telegram_chat_id")
+    tg_token = args.telegram_token or cfg.get("telegram_bot_token") or cfg.get("telegram_token")
+    tg_chat_id = args.telegram_chat_id or cfg.get("telegram_chat_id")
 
     notifier = TelegramNotifier(tg_token, tg_chat_id)
 

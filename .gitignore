@@ -2,7 +2,6 @@
 config.json
 storage_state.json
 browser_data/
-.env
 *.har
 
 # Generated at runtime
