@@ -1,0 +1,12 @@
+# Live session for your account. Anyone with these is logged in as you.
+config.json
+storage_state.json
+browser_data/
+.env
+*.har
+
+# Generated at runtime
+infocar_bot.log
+__pycache__/
+*.pyc
+.venv/

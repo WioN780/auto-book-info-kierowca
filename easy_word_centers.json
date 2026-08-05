@@ -1,0 +1,29 @@
+{
+  "list": ["28", "2002", "30001", "72", "2", "3003", "40", "30", "55", "35", "3", "23", "49", "7", "11", "54", "15", "38", "32", "58", "51", "47", "26"],
+  "centers": [
+    { "id": "28", "name": "WORD Ostrołęka", "city": "Ostrołęka", "pass_rate": 58.6, "year": "2016-2021" },
+    { "id": "2002", "name": "WORD Jelenia Góra / del Kamienna Góra", "city": "Kamienna Góra", "pass_rate": 57.7, "year": "2016-2021" },
+    { "id": "30001", "name": "WORD Płock M/E Sochaczew", "city": "Sochaczew", "pass_rate": 54.9, "year": "2016-2021" },
+    { "id": "72", "name": "DORD Jelenia Góra O/T Milicz", "city": "Milicz", "pass_rate": 54.3, "year": "2016-2021" },
+    { "id": "2", "name": "DORD Jelenia Góra", "city": "Jelenia Góra", "pass_rate": 54.3, "year": "2016-2021" },
+    { "id": "3003", "name": "DORD Bolesławiec", "city": "Bolesławiec", "pass_rate": 51.0, "year": "2016-2021" },
+    { "id": "40", "name": "WORD Suwałki", "city": "Suwałki", "pass_rate": 50.9, "year": "2016-2021" },
+    { "id": "30", "name": "WORD Płock", "city": "Płock", "pass_rate": 50.6, "year": "2016-2021" },
+    { "id": "55", "name": "WORD Kalisz", "city": "Kalisz", "pass_rate": 49.12, "year": "2026" },
+    { "id": null, "name": "WORD Łomża", "city": "Łomża", "pass_rate": 47.2, "year": "2026" },
+    { "id": "35", "name": "WORD Rzeszów", "city": "Rzeszów", "pass_rate": 47.9, "year": "2016-2021" },
+    { "id": "3", "name": "DORD Wrocław", "city": "Wrocław", "pass_rate": 42.9, "year": "2016-2021" },
+    { "id": "23", "name": "MORD Tarnów", "city": "Tarnów", "pass_rate": 41.1, "year": "2016-2021" },
+    { "id": "49", "name": "WORD Katowice O/T Rybnik", "city": "Rybnik", "pass_rate": 40.8, "year": "2016-2021" },
+    { "id": "7", "name": "WORD Toruń", "city": "Toruń", "pass_rate": 40.8, "year": "2016-2021" },
+    { "id": "11", "name": "WORD Lublin", "city": "Lublin", "pass_rate": 40.4, "year": "2016-2021" },
+    { "id": "54", "name": "WORD – RCBRD Olsztyn", "city": "Olsztyn", "pass_rate": 40.1, "year": "2016-2021" },
+    { "id": "15", "name": "WORD Zielona Góra", "city": "Zielona Góra", "pass_rate": 38.8, "year": "2016-2021" },
+    { "id": "38", "name": "WORD Białystok", "city": "Białystok", "pass_rate": 38.3, "year": "2016-2021" },
+    { "id": "32", "name": "WORD Radom", "city": "Radom", "pass_rate": 37.5, "year": "2016-2021" },
+    { "id": "58", "name": "WORD Poznań", "city": "Poznań", "pass_rate": 36.3, "year": "2016-2021" },
+    { "id": "51", "name": "WORD w Bielsku-Białej", "city": "Bielsko-Biała", "pass_rate": 35.2, "year": "2016-2021" },
+    { "id": "47", "name": "WORD Katowice O/T Tychy", "city": "Tychy", "pass_rate": 35.2, "year": "2016-2021" },
+    { "id": "26", "name": "WORD Warszawa M/E Bemowo", "city": "Warszawa (Powstańców Śląskich)", "pass_rate": 35.1, "year": "2016-2021" }
+  ]
+}
