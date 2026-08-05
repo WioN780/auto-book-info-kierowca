@@ -63,7 +63,7 @@ python infocar_bot.py --all-words --days 14             # monitorowanie wszystki
 
 `--all-words` (`-a`) sprawdza wszystkie ośrodki z `word_centers.json` (na dziś 91) zamiast `--org-id`. Wymaga obecności `word_centers.json` i nadpisuje `--org-id` oraz `organization_id(s)` z `config.json`, gdy jest ustawiona. Każdy cykl sprawdzania będzie wtedy znacznie wolniejszy, bo przechodzi przez wszystkie te ośrodki zamiast jednego.
 
-`easy_word_centers.json` to ręcznie wybrana lista ośrodków WORD z historycznie wyższą zdawalnością egzaminu praktycznego — przydatna, jeśli przy wyborze `--org-id` chcesz kierować się szansą na zdanie, a nie tylko bliskością. To sam plik referencyjny, bot go automatycznie nie odczytuje.
+`easy_word_centers.json` to ręcznie wybrana lista ośrodków WORD z historycznie wyższą zdawalnością egzaminu praktycznego, przydatna, jeśli przy wyborze `--org-id` chcesz kierować się szansą na zdanie, a nie tylko bliskością. To sam plik referencyjny, bot go automatycznie nie odczytuje.
 
 ## Konfiguracja
 
