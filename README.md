@@ -6,8 +6,6 @@ A Python bot that watches [info-kierowca.pl](https://info-kierowca.pl) for pract
 
 It is a free analogue to zlap-termin, built with Python.
 
-It runs fine for weeks on a Raspberry Pi, a home server, or whatever machine you leave switched on.
-
 ## The one command
 
 ```bash
@@ -64,6 +62,8 @@ python infocar_bot.py --all-words --days 14             # monitor every known WO
 `--list-words` reads `word_centers.json`. If that file is missing the list comes up empty, but any integer organization ID still works. 43 is PORD Gdańsk.
 
 `--all-words` (`-a`) checks every center in `word_centers.json` (91 as of writing) instead of `--org-id`. It requires `word_centers.json` to be present and overrides `--org-id` and `organization_id(s)` in `config.json` when set. Expect a much slower loop, since every cycle now pages through all of those centers instead of one.
+
+`easy_word_centers.json` is a hand-picked shortlist of WORD centers with historically higher practical exam pass rates, for picking an `--org-id` by your odds of passing rather than just proximity. It's a reference file only, nothing in the bot reads it automatically.
 
 ## Configuration
 
