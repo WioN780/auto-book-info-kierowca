@@ -1,4 +1,4 @@
-# InfoCar exam checker and auto-booker
+# Info-Kierowca exam checker and auto-booker
 
 Polish version: [README.pl.md](README.pl.md)
 

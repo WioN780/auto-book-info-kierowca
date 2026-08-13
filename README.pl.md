@@ -1,4 +1,4 @@
-# InfoCar: sprawdzanie i automatyczna rezerwacja terminów egzaminu
+# Info-Kierowca: sprawdzanie i automatyczna rezerwacja terminów egzaminu
 
 Wersja angielska: [README.md](README.md)
 
